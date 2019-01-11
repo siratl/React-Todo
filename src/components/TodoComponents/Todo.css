@@ -48,36 +48,44 @@ table {
 	border-spacing: 0;
 }
 
-/* App CSS */
+/********************* App CSS *********************/
 .appContainer {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 75%;
     border: 1px solid grey;
-    background-color: rgb(119, 89, 226);
+    background-color: lightgrey;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
     margin: 10px 0;
+    padding: 1% 0;
+    text-shadow: 1px 3px 4px rgb(73, 72, 72);
+    background-color: rgb(253, 232, 162)
 }
+
 .contentWrapper {
     width: 80%;
-    margin: 0 auto;
-    border: 1px solid red;
+    margin: 10px auto;
+    border: 2px solid rgb(204, 187, 187);
+    border-radius: 4px;
+    box-shadow: 0px 5px 7px 1px black;
+    background-color: rgb(253, 232, 162)
 }
 
 .todoList {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    align-items: center;
+    border-top: 1.2px solid white;
 
 }
 
@@ -85,28 +93,52 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 16px;
+    width: 100%;
+    font-size: 17px;
     cursor: pointer;
-    margin: 0.3% 0;
+    padding: 1% 0;
+    border-bottom: 1.2px solid white;
+}
+
+.todoItem:hover {
+    color: rgb(233, 66, 0);
 }
 
 .todoForm {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
     align-items: center;
+    padding: 2% 0;
+}
+
+
+.formBtn {
+    display: flex;
+    flex-direction: row;
+    width: 32%;
+    justify-content: space-between;
+
 }
 
 button {
-    height: 40px;
-    width: 20%;
-    margin: 1%;
+    height: 35px;
+    width: 50%;
+    margin: 0.8%;
     border-radius: 4px;
-    cursor: pointer
+    cursor: pointer;
+    background-color: lightgrey;
+
+}
+
+button:hover {
+    background: rgb(112, 112, 112);
+    font-weight: bold;
 }
 
 .todoFormInput {
     height: 25px;
+    width: 30%;
     border-radius: 4px;
-    margin: 1.5%;
+    margin: 1%;
+    padding-left: 10px;
 }

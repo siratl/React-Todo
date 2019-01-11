@@ -6,7 +6,7 @@ const Todo = props => {
     } else {
         return (
             <div className='todoItem'
-            style={props.todoItems.completed ? {textDecoration: 'line-through'} : null}
+            style={props.todoItems.completed ? {textDecoration: 'line-through', fontWeight: 'bold', color: 'red'} : null}
             onClick={() => props.handleToggleComplete(props.todoItems.id)}>{props.todoItems.task}</div>
         );  
     }

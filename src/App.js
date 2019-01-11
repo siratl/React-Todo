@@ -47,7 +47,7 @@ class App extends React.Component {
           }
         ], 
         todoName: ''
-      })
+      }, this.localStorageUpdate)
   };
 
   toggleTodoComplete = (id) => {
@@ -63,10 +63,9 @@ class App extends React.Component {
             ...item, 
             completed: !item.completed
           }
-          
         }
       })
-    })
+    }, this.localStorageUpdate)
   }
 
   clearCompleted = ev => {
@@ -75,27 +74,23 @@ class App extends React.Component {
       todoItems: this.state.todoItems.filter(item => 
         !item.completed
       )
-    })
+    }, this.localStorageUpdate)
   };
 
-  componentWillMount() {
-    localStorage.getItem('items') && this.setState({
-      todoItems: JSON.parse(localStorage.getItem('items')),
-    })
+  loadLocalStorage = () => {
+    if (localStorage.hasOwnProperty('task')) {
+      let task = localStorage.getItem('task');
+        task = JSON.parse(task);
+      this.setState({todoItems: task})
+    }
   }
 
-  // componentDidMount() {
-  //   if (localStorage.getItem('items')) {
-      
-  //   } else {
-      
-  //   }
-  // }
-
- 
-
-  componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem('task', JSON.stringify(nextState.todoItems));
+  localStorageUpdate = () => {
+    localStorage.setItem('task', JSON.stringify(this.state.todoItems));
+  }
+  
+  componentDidMount() {
+    this.loadLocalStorage();
   }
 
   render() {
