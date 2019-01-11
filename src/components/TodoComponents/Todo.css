@@ -60,16 +60,22 @@ table {
     font-size: 75%;
     border: 1px solid grey;
     background-color: lightgrey;
+    padding-bottom: 1%;
+}
+
+p {
+    text-align: center;
+    margin-top: 1%;
 }
 
 h2 {
     font-size: 22px;
     font-weight: bold;
     text-align: center;
-    margin: 10px 0;
-    padding: 1% 0;
+    padding: 2% 0;
     text-shadow: 1px 3px 4px rgb(73, 72, 72);
-    background-color: rgb(253, 232, 162)
+    background-color: rgb(253, 216, 95);
+    border-radius: 5px;
 }
 
 .contentWrapper {

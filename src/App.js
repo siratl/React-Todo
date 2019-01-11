@@ -109,7 +109,7 @@ class App extends React.Component {
             clearCompleted={this.clearCompleted}
           />
         </div>
-        
+        <p> &copy; Elisha Atulomah 2019 </p>
       </div>
     );
   }
