@@ -4,8 +4,8 @@ const todoForm = props => {
     
 
     return (
-        <form>
-            <input 
+        <form className='todoForm'>
+            <input className='todoFormInput'
                 value={props.todoName}
                 type='text'
                 name='todoName'

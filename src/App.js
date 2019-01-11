@@ -1,8 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
-
-
+import './components/TodoComponents/Todo.css'
 
 const todos = [
   {
@@ -79,21 +78,43 @@ class App extends React.Component {
     })
   };
 
+  componentWillMount() {
+    localStorage.getItem('items') && this.setState({
+      todoItems: JSON.parse(localStorage.getItem('items')),
+    })
+  }
+
+  // componentDidMount() {
+  //   if (localStorage.getItem('items')) {
+      
+  //   } else {
+      
+  //   }
+  // }
+
+ 
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('task', JSON.stringify(nextState.todoItems));
+  }
+
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList 
-          todoItems={this.state.todoItems}
-          handleToggleComplete={this.toggleTodoComplete}
-        />
-        <TodoForm 
-          handleTodoChange={this.handleTodoChange} 
-          todoName={this.state.todoName}
-          addTodo={this.addTodo}
-          clearCompleted={this.clearCompleted}
-          
-        />
+      <div className='appContainer'>
+        <div className='contentWrapper'>
+          <h2>Welcome to your Todo App!</h2>
+          <TodoList 
+            todoItems={this.state.todoItems}
+            handleToggleComplete={this.toggleTodoComplete}
+          />
+          <TodoForm 
+            handleTodoChange={this.handleTodoChange} 
+            todoName={this.state.todoName}
+            addTodo={this.addTodo}
+            clearCompleted={this.clearCompleted}
+          />
+        </div>
+        
       </div>
     );
   }
